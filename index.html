@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>◊ FallClinicPractice · sovereign UK healthcare clinic practice management · CQC · revenue · prescribing · staff</title>
+<meta name="description" content="Sovereign practice management for UK healthcare clinics. Appointment revenue, NHS/private billing, prescribing costs, CQC compliance dashboard, staff CPD, PI insurance, infection control, clinical governance. Single HTML, IDB primary, MIT.">
+<meta name="prime" content="941">
+<meta name="theme-color" content="#0b0a0f">
+<link rel="manifest" href='data:application/manifest+json,{"name":"FallClinicPractice","short_name":"clinic-practice","start_url":"./","display":"standalone","background_color":"%230b0a0f","theme_color":"%23b8974a","icons":[{"src":"data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 192 192%27><rect width=%27192%27 height=%27192%27 fill=%27%230b0a0f%27 rx=%2728%27/><text x=%2796%27 y=%27140%27 font-family=%27Georgia, serif%27 font-size=%27122%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23b8974a%27>%E2%97%8A</text></svg>","sizes":"192x192","type":"image/svg+xml"}]}'>
+<style>
+:root{--void:#0b0a0f;--void-2:#13121a;--ink:#1a1922;--ink-2:#22212c;--line:#2a2934;--line-soft:#1f1e28;--cream:#e6e1d6;--cream-dim:#a8a395;--cream-muted:#6e6a5e;--brass:#b8974a;--amber:#ff8c00;--ox:#8b1a1a;--green:#4ade80;--red:#ef4444;--blue:#60a5fa;--yellow:#fbbf24;--serif:Georgia,'Libre Baskerville',ui-serif,serif;--sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:'IBM Plex Mono','SF Mono',ui-monospace,Menlo,monospace}
+*{margin:0;padding:0;box-sizing:border-box}html,body{background:var(--void);color:var(--cream);font:14px/1.55 var(--sans);min-height:100dvh;-webkit-font-smoothing:antialiased}
+button{font-family:inherit;cursor:pointer;background:transparent;border:none;color:inherit}input,textarea,select{font-family:inherit;background:var(--ink);border:1px solid var(--line);color:var(--cream);border-radius:3px;padding:7px 10px;outline:none;font-size:13px}input:focus,textarea:focus,select:focus{border-color:var(--brass)}a{color:var(--brass)}
+.app{min-height:100dvh;display:grid;grid-template-rows:48px 1fr}header{display:flex;align-items:center;border-bottom:1px solid var(--line);background:var(--void-2);user-select:none}
+.brand{display:flex;align-items:center;gap:10px;padding:0 16px;height:100%;border-right:1px solid var(--line)}.brand .mark{width:28px;height:28px;background:linear-gradient(135deg,var(--brass),var(--amber));border-radius:5px;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:16px;color:var(--void)}.brand .name{font-family:var(--serif);font-weight:600;font-size:14px}.brand .seal{font-family:var(--mono);font-size:9px;color:var(--cream-muted);letter-spacing:0.18em;text-transform:uppercase}
+nav.tabs{display:flex;flex:1;overflow-x:auto;align-items:stretch}nav.tabs button{padding:0 14px;font-size:12px;color:var(--cream-dim);letter-spacing:0.04em;display:flex;align-items:center;border-right:1px solid var(--line-soft);height:100%;white-space:nowrap;border-top:2px solid transparent}nav.tabs button:hover{background:var(--ink);color:var(--cream)}nav.tabs button.active{background:var(--ink);color:var(--brass);border-top-color:var(--brass)}
+.tools-r{display:flex;align-items:center;gap:5px;padding:0 14px;height:100%;border-left:1px solid var(--line)}.tool-btn{padding:5px 11px;border-radius:3px;font-size:11px;color:var(--cream-dim);letter-spacing:0.06em;text-transform:uppercase;font-family:var(--mono);border:1px solid var(--line)}.tool-btn:hover{background:var(--ink);color:var(--cream);border-color:var(--brass)}
+main{padding:18px 22px 60px;overflow-y:auto;max-width:1240px;margin:0 auto;width:100%}
+.disclaimer{background:rgba(139,26,26,0.15);border:1px solid var(--ox);border-left:3px solid var(--ox);border-radius:3px;padding:12px 16px;margin-bottom:18px;font-size:12px}.disclaimer strong{color:var(--brass)}
+.section-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;gap:14px;flex-wrap:wrap}.section-h h2{font-family:var(--serif);font-size:18px;font-weight:600}.section-h .sub{font-family:var(--mono);font-size:11px;color:var(--cream-muted);letter-spacing:0.08em;text-transform:uppercase}.section-h .actions{display:flex;gap:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.card{background:var(--void-2);border:1px solid var(--line);border-radius:4px;padding:16px 18px;margin-bottom:14px}.card h3{font-family:var(--serif);font-size:14px;font-weight:600;margin-bottom:10px}.card h3 .meta{font-family:var(--mono);font-size:10px;color:var(--brass);letter-spacing:0.1em;margin-left:8px}
+.kpi{display:flex;justify-content:space-between;align-items:baseline;padding:6px 0;border-bottom:1px dashed var(--line-soft);font-size:13px}.kpi:last-child{border-bottom:none}.kpi .l{color:var(--cream-dim)}.kpi .v{font-family:var(--mono);font-weight:500}.kpi .v.green{color:var(--green)}.kpi .v.red{color:var(--red)}.kpi .v.amber{color:var(--amber)}.kpi .v.brass{color:var(--brass)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px}
+.field label{display:block;font-family:var(--mono);font-size:10px;color:var(--cream-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:3px}.field input,.field select,.field textarea{width:100%}.field .hint{font-size:10px;color:var(--cream-muted);margin-top:3px;font-family:var(--mono)}
+.btn{padding:7px 14px;border:1px solid var(--brass);border-radius:3px;font-size:12px;color:var(--cream);background:transparent}.btn:hover{border-color:var(--amber);color:var(--amber)}.btn.brass{background:var(--brass);color:var(--void);border-color:var(--brass);font-weight:600}.btn.brass:hover{background:var(--amber)}.btn.sm{padding:4px 9px;font-size:11px}.btn.ghost{border-color:var(--line);color:var(--cream-dim)}.btn.danger:hover{border-color:var(--red);color:var(--red)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}th,td{padding:7px 10px;border-bottom:1px solid var(--line-soft);text-align:left;vertical-align:top}th{color:var(--brass);font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600}td.r{text-align:right;font-family:var(--mono)}
+.tag{display:inline-block;padding:2px 7px;border-radius:11px;font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;border:1px solid var(--brass);color:var(--brass)}.tag.green{border-color:var(--green);color:var(--green)}.tag.red{border-color:var(--red);color:var(--red)}.tag.amber{border-color:var(--amber);color:var(--amber)}.tag.muted{border-color:var(--cream-muted);color:var(--cream-muted)}
+.checklist{list-style:none}.checklist li{padding:6px 0;border-bottom:1px dashed var(--line-soft);font-size:13px;display:flex;align-items:flex-start;gap:8px}.checklist li:last-child{border-bottom:none}.checklist li input{margin-top:3px}
+.empty{padding:24px;text-align:center;color:var(--cream-muted);font-style:italic;font-size:12px}
+.chat{display:flex;flex-direction:column;gap:10px;max-height:60vh;overflow-y:auto;padding:6px}.msg{padding:10px 14px;border-radius:6px;max-width:88%;font-size:13px;line-height:1.55;white-space:pre-wrap}.msg.user{background:var(--ink);align-self:flex-end}.msg.bot{background:var(--void-2);border:1px solid var(--line);border-left:2px solid var(--brass);align-self:flex-start}.msg .src{font-family:var(--mono);font-size:10px;color:var(--cream-muted);margin-top:6px;padding-top:6px;border-top:1px dashed var(--line)}.chat-input{display:flex;gap:8px;margin-top:10px}.chat-input input{flex:1;padding:11px 14px}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;align-items:center;justify-content:center;padding:18px;z-index:900;backdrop-filter:blur(4px)}.modal-bg.open{display:flex}.modal{background:var(--void-2);border:1px solid var(--brass);border-radius:4px;padding:22px;max-width:760px;width:100%;max-height:90vh;overflow:auto}.modal h2{font-family:var(--serif);font-size:17px;margin-bottom:14px}.modal .actions{display:flex;gap:8px;margin-top:16px;justify-content:flex-end}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--brass);color:var(--void);padding:9px 18px;border-radius:3px;font-family:var(--mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;opacity:0;transition:all 0.22s;z-index:1100;pointer-events:none}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:760px){nav.tabs button{padding:0 10px;font-size:11px}main{padding:14px 14px 50px}.row,.row3,.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="brand"><div class="mark">◊</div><div><div class="name">FallClinicPractice</div></div><div class="seal">v1 · prime 941</div></div>
+  <nav class="tabs" id="tabNav"></nav>
+  <div class="tools-r"><button class="tool-btn" id="tierBadge" onclick="openModal('settings')">T0</button><button class="tool-btn" onclick="openModal('settings')">⚙</button></div>
+</header>
+<main id="view"></main>
+</div>
+<div class="modal-bg" id="modal"><div class="modal"><h2 id="modalTitle">.</h2><div id="modalBody"></div></div></div>
+<div class="toast" id="toast">.</div>
+
+<script>
+'use strict';
+const TOOLNAME='fallclinicpractice',VERSION='1.0.0',PRIME=941,STORE='fallclinicpractice-v1';
+const TABS=[{id:'dashboard',label:'◊ dashboard'},{id:'appointments',label:'appointments'},{id:'revenue',label:'revenue'},{id:'prescribing',label:'prescribing'},{id:'staff',label:'staff & CPD'},{id:'cqc',label:'CQC'},{id:'expenses',label:'expenses'},{id:'firm-pl',label:'practice P&L'},{id:'qa',label:'Q&A'}];
+
+const RULES={vatStandard:0.20,vatRegThreshold:90000,nhsStdApptValue:39.23,nhsEnhancedValue:65.50,privateConsultFee:150,privateFollowUp:95,piMinCover:500000,cqcAnnualFee:4428,icoRegFee:40,indemnityMinCover:10000000,gmcAnnualFee:459,rcgpAnnualFee:190,mandatoryTrainingHours:12};
+
+let state={active:'dashboard',firm:null,staff:[],appointments:[],revenue:[],prescribing:[],expenses:[],audit:[],chat:[],
+  settings:{anthropicKey:'',auditChain:true,piAnnualPremium:0,cqcFee:RULES.cqcAnnualFee,indemnityPremium:0,demoLoaded:false}};
+
+const $=(s,p=document)=>p.querySelector(s);const uid=p=>(p||'')+'_'+Math.random().toString(36).slice(2,11);const now=()=>Date.now();
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const moneyP=n=>'£'+(+n||0).toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2});
+const pct=n=>((+n||0)*100).toFixed(1)+'%';const isoDate=ts=>new Date(ts||Date.now()).toISOString().slice(0,10);const monthKey=ts=>new Date(ts||Date.now()).toISOString().slice(0,7);const dayMs=86400000;
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t._to);t._to=setTimeout(()=>t.classList.remove('show'),1900)}
+async function sha256(s){const buf=new TextEncoder().encode(String(s));const h=await crypto.subtle.digest('SHA-256',buf);return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,'0')).join('')}
+
+let db;const STORES=['state','firms','staff','appointments','revenue','prescribing','expenses','audit'];
+function openDB(){return new Promise((res,rej)=>{const r=indexedDB.open(STORE,1);r.onupgradeneeded=e=>{const d=e.target.result;STORES.forEach(s=>{if(!d.objectStoreNames.contains(s))d.createObjectStore(s,{keyPath:'id'})})};r.onsuccess=e=>{db=e.target.result;res(db)};r.onerror=rej})}
+function idbPut(s,v){return new Promise(r=>{const tx=db.transaction(s,'readwrite');tx.objectStore(s).put(v);tx.oncomplete=()=>r(true);tx.onerror=()=>r(false)})}
+function idbGetAll(s){return new Promise(r=>{const tx=db.transaction(s,'readonly');const q=tx.objectStore(s).getAll();q.onsuccess=()=>r(q.result||[]);q.onerror=()=>r([])})}
+function idbGet(s,k){return new Promise(r=>{const tx=db.transaction(s,'readonly');const q=tx.objectStore(s).get(k);q.onsuccess=()=>r(q.result);q.onerror=()=>r(null)})}
+async function loadAll(){await openDB();const s=await idbGet('state','singleton');if(s){state.active=s.active||state.active;state.chat=s.chat||[];state.settings=Object.assign({},state.settings,s.settings||{})}const firms=await idbGetAll('firms');state.firm=firms[0]||null;state.staff=await idbGetAll('staff');state.appointments=await idbGetAll('appointments');state.revenue=await idbGetAll('revenue');state.prescribing=await idbGetAll('prescribing');state.expenses=await idbGetAll('expenses');state.audit=await idbGetAll('audit')}
+async function saveState(){await idbPut('state',{id:'singleton',active:state.active,chat:state.chat,settings:state.settings})}
+async function auditLog(action,payload={}){if(!state.settings.auditChain)return;const prev=state.audit[state.audit.length-1];const i=(prev?prev.i:0)+1;const entry={id:uid('au'),i,ts:now(),tool:TOOLNAME,action,configVersion:TOOLNAME+'@'+VERSION,prevHash:prev?.hash||'',hash:''};entry.hash=await sha256(JSON.stringify({i,ts:entry.ts,action,prev:entry.prevHash}));state.audit.push(entry);await idbPut('audit',entry)}
+
+let bcClinic,bcSignal;
+function initMesh(){try{bcSignal=new BroadcastChannel('fall-signal');bcSignal.postMessage({source:TOOLNAME,type:'hello',prime:PRIME,version:VERSION,ts:now()})}catch(e){}try{bcClinic=new BroadcastChannel('fall-clinic');bcClinic.addEventListener('message',async e=>{const m=e.data;if(!m||m.source===TOOLNAME)return;if(m.type==='sync.snapshot'){const p=m.payload||{};if(p.firm&&!state.firm){state.firm=p.firm;await idbPut('firms',p.firm)}render()}});bcClinic.postMessage({v:1,type:'sync.request',ts:now(),source:TOOLNAME})}catch(e){}}
+
+function totalRevenue(mk){return state.revenue.filter(r=>monthKey(r.date)===mk).reduce((s,r)=>s+(+r.amount||0),0)}
+function nhsRevenue(mk){return state.revenue.filter(r=>monthKey(r.date)===mk&&r.type==='nhs').reduce((s,r)=>s+(+r.amount||0),0)}
+function privateRevenue(mk){return state.revenue.filter(r=>monthKey(r.date)===mk&&r.type==='private').reduce((s,r)=>s+(+r.amount||0),0)}
+function totalExpenses(mk){return state.expenses.filter(x=>monthKey(x.date)===mk).reduce((s,x)=>s+(+x.amount||0),0)}
+function totalPrescribingCost(mk){return state.prescribing.filter(p=>monthKey(p.date)===mk).reduce((s,p)=>s+(+p.cost||0),0)}
+function apptCount(mk){return state.appointments.filter(a=>monthKey(a.date)===mk).length}
+function dnaCount(mk){return state.appointments.filter(a=>monthKey(a.date)===mk&&a.status==='dna').length}
+function staffName(id){const s=state.staff.find(x=>x.id===id);return s?s.name:id?(id.slice(0,8)):'—'}
+
+function render(){$('#tabNav').innerHTML=TABS.map(t=>`<button class="${state.active===t.id?'active':''}" onclick="switchTab('${t.id}')">${t.label}</button>`).join('');const v=$('#view');switch(state.active){case 'dashboard':return renderDash(v);case 'appointments':return renderAppts(v);case 'revenue':return renderRevenue(v);case 'prescribing':return renderPrescribing(v);case 'staff':return renderStaff(v);case 'cqc':return renderCQC(v);case 'expenses':return renderExpenses(v);case 'firm-pl':return renderPL(v);case 'qa':return renderQA(v)}}
+function switchTab(id){state.active=id;saveState();render()}
+
+function renderDash(v){const mk=monthKey();const tr=totalRevenue(mk);const te=totalExpenses(mk);const net=tr-te;const ac=apptCount(mk);const dc=dnaCount(mk);
+  v.innerHTML=`<div class="disclaimer"><strong>◊ Regulatory notice:</strong> FallClinicPractice models UK healthcare practice finances. CQC registration, medical indemnity, GMC revalidation, and clinical governance are the practice's responsibility. This tool does not replace practice management systems. Data never leaves this device.</div>
+  <div class="section-h"><h2>Dashboard</h2><div class="sub">${mk} · prime ${PRIME}</div></div>
+  <div class="grid">
+    <div class="card"><h3>Revenue <span class="meta">${mk}</span></h3>
+      <div class="kpi"><span class="l">NHS</span><span class="v">${moneyP(nhsRevenue(mk))}</span></div>
+      <div class="kpi"><span class="l">private</span><span class="v">${moneyP(privateRevenue(mk))}</span></div>
+      <div class="kpi"><span class="l">total</span><span class="v brass">${moneyP(tr)}</span></div>
+      <div class="kpi"><span class="l">expenses</span><span class="v red">${moneyP(te)}</span></div>
+      <div class="kpi"><span class="l">net</span><span class="v ${net>=0?'green':'red'}">${moneyP(net)}</span></div>
+    </div>
+    <div class="card"><h3>Appointments <span class="meta">${mk}</span></h3>
+      <div class="kpi"><span class="l">total</span><span class="v">${ac}</span></div>
+      <div class="kpi"><span class="l">DNAs</span><span class="v ${dc>0?'red':'green'}">${dc}</span></div>
+      <div class="kpi"><span class="l">DNA rate</span><span class="v ${dc/Math.max(ac,1)>0.05?'red':'green'}">${ac>0?pct(dc/ac):'—'}</span></div>
+    </div>
+    <div class="card"><h3>Prescribing <span class="meta">${mk}</span></h3>
+      <div class="kpi"><span class="l">items</span><span class="v">${state.prescribing.filter(p=>monthKey(p.date)===mk).length}</span></div>
+      <div class="kpi"><span class="l">cost</span><span class="v">${moneyP(totalPrescribingCost(mk))}</span></div>
+    </div>
+    <div class="card"><h3>Practice</h3>
+      <div class="kpi"><span class="l">staff</span><span class="v">${state.staff.length}</span></div>
+      <div class="kpi"><span class="l">CQC fee</span><span class="v">${moneyP(state.settings.cqcFee)}</span></div>
+      <div class="kpi"><span class="l">indemnity</span><span class="v">${moneyP(state.settings.indemnityPremium)}</span></div>
+    </div>
+  </div>`}
+
+function renderAppts(v){const items=state.appointments.sort((a,b)=>b.date-a.date);
+  v.innerHTML=`<div class="section-h"><h2>Appointments</h2><div class="actions"><button class="btn brass sm" onclick="openModal('apptEntry')">+ appointment</button></div></div>
+  ${items.length?`<table><thead><tr><th>Date</th><th>Patient</th><th>Clinician</th><th>Type</th><th>Status</th><th>Fee</th></tr></thead><tbody>${items.slice(0,50).map(a=>`<tr><td>${isoDate(a.date)}</td><td>${esc(a.patientName||'—')}</td><td>${staffName(a.clinicianId)}</td><td><span class="tag">${esc(a.type)}</span></td><td><span class="tag ${a.status==='attended'?'green':a.status==='dna'?'red':'muted'}">${a.status}</span></td><td class="r">${moneyP(a.fee)}</td></tr>`).join('')}</tbody></table>`:'<div class="empty">No appointments.</div>'}`}
+
+function renderRevenue(v){const items=state.revenue.sort((a,b)=>b.date-a.date);const mk=monthKey();
+  v.innerHTML=`<div class="section-h"><h2>Revenue</h2><div class="actions"><button class="btn brass sm" onclick="openModal('revenueEntry')">+ entry</button></div></div>
+  <div class="grid" style="margin-bottom:14px">
+    <div class="card"><h3>This month</h3><div class="kpi"><span class="l">NHS</span><span class="v">${moneyP(nhsRevenue(mk))}</span></div><div class="kpi"><span class="l">private</span><span class="v">${moneyP(privateRevenue(mk))}</span></div><div class="kpi"><span class="l">total</span><span class="v brass">${moneyP(totalRevenue(mk))}</span></div></div>
+  </div>
+  ${items.length?`<table><thead><tr><th>Date</th><th>Type</th><th>Description</th><th>Amount</th></tr></thead><tbody>${items.slice(0,50).map(r=>`<tr><td>${isoDate(r.date)}</td><td><span class="tag ${r.type==='nhs'?'green':'amber'}">${r.type}</span></td><td>${esc(r.description||'—')}</td><td class="r">${moneyP(r.amount)}</td></tr>`).join('')}</tbody></table>`:'<div class="empty">No revenue entries.</div>'}`}
+
+function renderPrescribing(v){const items=state.prescribing.sort((a,b)=>b.date-a.date);const mk=monthKey();
+  v.innerHTML=`<div class="section-h"><h2>Prescribing</h2><div class="actions"><button class="btn brass sm" onclick="openModal('rxEntry')">+ item</button></div></div>
+  <div class="card" style="margin-bottom:14px"><h3>This month</h3><div class="kpi"><span class="l">items</span><span class="v">${state.prescribing.filter(p=>monthKey(p.date)===mk).length}</span></div><div class="kpi"><span class="l">cost</span><span class="v red">${moneyP(totalPrescribingCost(mk))}</span></div></div>
+  ${items.length?`<table><thead><tr><th>Date</th><th>Drug</th><th>Patient</th><th>Prescriber</th><th>Cost</th></tr></thead><tbody>${items.slice(0,50).map(p=>`<tr><td>${isoDate(p.date)}</td><td>${esc(p.drug)}</td><td>${esc(p.patientName||'—')}</td><td>${staffName(p.prescriberId)}</td><td class="r">${moneyP(p.cost)}</td></tr>`).join('')}</tbody></table>`:'<div class="empty">No prescribing data.</div>'}`}
+
+function renderStaff(v){v.innerHTML=`<div class="section-h"><h2>Staff & CPD</h2><div class="actions"><button class="btn brass sm" onclick="openModal('staffEntry')">+ staff</button></div></div>
+  ${state.staff.length?`<table><thead><tr><th>Name</th><th>Role</th><th>GMC/NMC/HCPC</th><th>CPD hours</th><th>Appraisal due</th><th>DBS</th></tr></thead><tbody>${state.staff.map(s=>`<tr><td>${esc(s.name)}</td><td>${esc(s.role)}</td><td style="font-family:var(--mono);font-size:12px">${esc(s.regNumber||'—')}</td><td class="r">${s.cpdHours||0}/${RULES.mandatoryTrainingHours}</td><td>${s.appraisalDue?isoDate(s.appraisalDue):'—'}</td><td><span class="tag ${s.dbsChecked?'green':'red'}">${s.dbsChecked?'clear':'needed'}</span></td></tr>`).join('')}</tbody></table>`:'<div class="empty">No staff added.</div>'}`}
+
+function renderCQC(v){v.innerHTML=`<div class="section-h"><h2>CQC Compliance</h2></div>
+  <div class="card" style="max-width:780px"><h3>CQC 5 Key Questions</h3><ul class="checklist">
+    <li><input type="checkbox"> <strong>Safe</strong> — safeguarding, infection control, medicines management, risk assessments, incident reporting</li>
+    <li><input type="checkbox"> <strong>Effective</strong> — evidence-based care, clinical audit, outcomes monitoring, NICE compliance</li>
+    <li><input type="checkbox"> <strong>Caring</strong> — dignity, compassion, patient involvement, privacy, emotional support</li>
+    <li><input type="checkbox"> <strong>Responsive</strong> — access, waiting times, complaints handling, reasonable adjustments</li>
+    <li><input type="checkbox"> <strong>Well-led</strong> — governance, leadership, culture, learning, improvement, duty of candour</li>
+  </ul></div>
+  <div class="card" style="max-width:780px"><h3>Regulatory Requirements</h3><ul class="checklist">
+    <li><input type="checkbox" ${state.firm?'checked':''}> CQC registration current (${esc(state.firm?.cqcRegistration||'not set')})</li>
+    <li><input type="checkbox" ${state.settings.indemnityPremium>0?'checked':''}> Medical indemnity / PI insurance current</li>
+    <li><input type="checkbox" ${state.staff.every(s=>s.dbsChecked)?'checked':''}> All staff DBS checked</li>
+    <li><input type="checkbox" ${state.staff.every(s=>(s.cpdHours||0)>=RULES.mandatoryTrainingHours)?'checked':''}> All staff mandatory training complete (${RULES.mandatoryTrainingHours}h)</li>
+    <li><input type="checkbox"> Infection control audit (annual)</li>
+    <li><input type="checkbox"> Significant event audit log maintained</li>
+    <li><input type="checkbox"> Complaints procedure in place and publicised</li>
+    <li><input type="checkbox"> Duty of candour policy (Reg.20)</li>
+    <li><input type="checkbox"> Data Security and Protection Toolkit submitted</li>
+    <li><input type="checkbox"> Caldicott Guardian appointed</li>
+  </ul></div>`}
+
+function renderExpenses(v){const items=state.expenses.sort((a,b)=>b.date-a.date);
+  v.innerHTML=`<div class="section-h"><h2>Expenses</h2><div class="actions"><button class="btn brass sm" onclick="openModal('expenseEntry')">+ expense</button></div></div>
+  ${items.length?`<table><thead><tr><th>Date</th><th>Category</th><th>Description</th><th>Amount</th></tr></thead><tbody>${items.map(x=>`<tr><td>${isoDate(x.date)}</td><td>${esc(x.category)}</td><td>${esc(x.description||'—')}</td><td class="r">${moneyP(x.amount)}</td></tr>`).join('')}</tbody></table>`:'<div class="empty">No expenses.</div>'}`}
+
+function renderPL(v){const months=[];const d=new Date();for(let i=0;i<12;i++){months.push(new Date(d.getFullYear(),d.getMonth()-i,1).toISOString().slice(0,7))}months.reverse();
+  const annualRev=months.reduce((s,m)=>s+totalRevenue(m),0);const annualExp=months.reduce((s,m)=>s+totalExpenses(m),0);const annualRx=months.reduce((s,m)=>s+totalPrescribingCost(m),0);
+  const overheads=(+state.settings.cqcFee||0)+(+state.settings.indemnityPremium||0)+(+state.settings.piAnnualPremium||0);const net=annualRev-annualExp-annualRx-overheads;
+  v.innerHTML=`<div class="section-h"><h2>Practice P&L</h2><div class="sub">rolling 12m</div></div>
+  <div class="grid" style="margin-bottom:18px">
+    <div class="card"><h3>Revenue</h3><div class="kpi"><span class="l">NHS</span><span class="v">${moneyP(months.reduce((s,m)=>s+nhsRevenue(m),0))}</span></div><div class="kpi"><span class="l">private</span><span class="v">${moneyP(months.reduce((s,m)=>s+privateRevenue(m),0))}</span></div><div class="kpi"><span class="l">total</span><span class="v brass">${moneyP(annualRev)}</span></div></div>
+    <div class="card"><h3>Costs</h3><div class="kpi"><span class="l">expenses</span><span class="v">${moneyP(annualExp)}</span></div><div class="kpi"><span class="l">prescribing</span><span class="v">${moneyP(annualRx)}</span></div><div class="kpi"><span class="l">CQC fee</span><span class="v">${moneyP(state.settings.cqcFee)}</span></div><div class="kpi"><span class="l">indemnity</span><span class="v">${moneyP(state.settings.indemnityPremium)}</span></div><div class="kpi"><span class="l">total</span><span class="v red">${moneyP(annualExp+annualRx+overheads)}</span></div></div>
+    <div class="card"><h3>Net</h3><div class="kpi"><span class="l">net profit</span><span class="v ${net>=0?'green':'red'}">${moneyP(net)}</span></div><div class="kpi"><span class="l">margin</span><span class="v">${annualRev>0?pct(net/annualRev):'—'}</span></div></div>
+  </div>
+  <table><thead><tr><th>Month</th><th>Revenue</th><th>Expenses</th><th>Prescribing</th><th>Net</th></tr></thead><tbody>${months.map(m=>{const r=totalRevenue(m);const e=totalExpenses(m);const rx=totalPrescribingCost(m);const n=r-e-rx;return `<tr><td>${m}</td><td class="r">${moneyP(r)}</td><td class="r">${moneyP(e)}</td><td class="r">${moneyP(rx)}</td><td class="r" style="color:${n>=0?'var(--green)':'var(--red)'}">${moneyP(n)}</td></tr>`}).join('')}</tbody></table>`}
+
+const T0_QA=[
+  {q:/cqc|care quality|inspection|rating/i,a:'CQC (Care Quality Commission) regulates all health and social care in England. 5 key questions: Safe, Effective, Caring, Responsive, Well-led. Ratings: Outstanding, Good, Requires Improvement, Inadequate. Annual fee based on provider type/size (~£4,428 for a single GP practice). Registration required before providing regulated activities. Conditions of registration: registered manager, statement of purpose, duty of candour.'},
+  {q:/indemnity|negligence|mdi/i,a:'Medical indemnity is mandatory. Options: MDU, MPS, MDDUS (mutual defence organisations) or commercial PI insurance. NHS Resolution covers NHS work (CNST for trusts). Private work requires separate cover. Minimum recommended: £10m for GPs. State-backed indemnity (CNSGP) covers GP work in England since April 2019 but does not cover private work, out-of-hours, or locum work outside CNSGP scope.'},
+  {q:/gmc|revalidation|appraisal|fitness/i,a:'GMC annual retention fee: £459 (2025). Revalidation every 5 years: requires annual appraisals (5 over the revalidation cycle), CPD, quality improvement, significant events, patient feedback, colleague feedback. Responsible Officer submits recommendation. Fitness to Practise: GMC can investigate, impose conditions, suspend, or erase from register.'},
+  {q:/prescribing|cost|formulary|nice/i,a:'NHS prescribing: use generic names (BNF approved), follow local formulary, NICE Technology Appraisals are mandatory. Prescribing budget: practices receive an indicative budget. QIPP (Quality, Innovation, Productivity, Prevention) targets. Controlled drugs: additional regulations (Misuse of Drugs Regulations 2001). Prescribing data published quarterly (ePACT2/OpenPrescribing).'},
+  {q:/dna|did not attend|missed/i,a:'DNA (Did Not Attend) rates: NHS England target <5%. DNAs cost the NHS ~£1bn/year. Strategies: SMS/text reminders (evidence-based), rapid rebooking, DNA policy, overbooking clinics. Cannot charge NHS patients for DNAs (NHS Constitution). Private patients: cancellation fees allowed if in terms. Consider: was it a safeguarding concern? Repeated DNAs in children/vulnerable adults may indicate neglect.'},
+  {q:/nhs.?contract|gms|pms|qof/i,a:'GP contracts: GMS (national), PMS (local), APMS (alternative). QOF (Quality and Outcomes Framework): points-based incentive payments for chronic disease management, public health, prescribing. DES (Directed Enhanced Services): additional payments for specific services. PCN (Primary Care Network) funding: Additional Roles Reimbursement Scheme.'},
+  {q:/infection.?control|hcai|ppe/i,a:'Health and Social Care Act 2008 Code of Practice (Reg.12): infection prevention and control. Annual IPC audit required. Hand hygiene compliance monitoring. PPE provision (COSHH). Sharps management (Health and Safety (Sharp Instruments in Healthcare) Regulations 2013). RIDDOR reporting for needlestick injuries. CQC inspects IPC as part of "Safe" domain.'},
+  {q:/duty.?of.?candour|reg.?20|openness/i,a:'Regulation 20 (Health and Social Care Act 2008): duty of candour. When a notifiable safety incident occurs: tell the patient (or NOK) as soon as reasonably practicable, apologise, provide a written account, offer support. Applies to incidents causing death, severe harm, moderate harm, or prolonged psychological harm. Apology is not an admission of liability (Compensation Act 2006 s.2).'},
+  {q:/complaint|pals|ombudsman/i,a:'NHS complaints: Local Resolution (practice/trust, 3 working days acknowledgement, investigate, respond). If unresolved: Parliamentary and Health Service Ombudsman (PHSO). Private: Healthcare Sector complaints. Practice must have written complaints procedure, publicise it, learn from complaints. Annual complaints report. CQC monitors complaints handling under "Responsive".'},
+  {q:/cpd|training|mandatory|statutory/i,a:'Mandatory training: safeguarding (adults + children), basic life support (annual), infection control, information governance, fire safety, equality & diversity, health & safety, manual handling. CPD: GMC requires ongoing learning for revalidation (50 CPD credits/year recommended by RCGP). Statutory training: differs by role. Records must be maintained and auditable.'},
+];
+function askT0(q){for(const r of T0_QA){if(r.q.test(q))return {answer:r.a,source:'T0 · UK healthcare practice rules'}}return null}
+async function askT3(q){if(!state.settings.anthropicKey)return null;try{const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'x-api-key':state.settings.anthropicKey,'anthropic-version':'2023-06-01','content-type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:600,messages:[{role:'user',content:'You are a UK healthcare practice management expert. CQC, NHS contracts, prescribing, clinical governance. Concise.\n\n'+q}]})});if(!res.ok)return null;const j=await res.json();return {answer:j.content?.[0]?.text,source:'T3 · Anthropic'}}catch(e){return null}}
+function renderQA(v){v.innerHTML=`<div class="section-h"><h2>Q & A</h2><div class="sub">T0 + T3 BYOK</div></div><div class="card" style="max-width:780px"><div class="chat" id="chatBox">${(state.chat||[]).map(m=>`<div class="msg ${m.role}">${esc(m.text)}${m.source?`<div class="src">${esc(m.source)}</div>`:''}</div>`).join('')}</div><div class="chat-input"><input id="chatIn" placeholder="Ask… 'CQC key questions?' · 'DNA rates?' · 'prescribing budget?'" onkeydown="if(event.key==='Enter')askQuestion()"><button class="btn brass" onclick="askQuestion()">Ask</button></div></div>`;const box=$('#chatBox');if(box)box.scrollTop=box.scrollHeight}
+async function askQuestion(){const inp=$('#chatIn');if(!inp)return;const q=inp.value.trim();if(!q)return;inp.value='';state.chat.push({role:'user',text:q});render();let r=askT0(q);if(!r)r=await askT3(q);state.chat.push(r?{role:'bot',text:r.answer,source:r.source}:{role:'bot',text:'No T0 match. Add BYOK key for T3.',source:'system'});saveState();render()}
+
+function openModal(type){const modal=$('#modal');const title=$('#modalTitle');const body=$('#modalBody');modal.classList.add('open');
+  const staffOpts=state.staff.map(s=>`<option value="${s.id}">${esc(s.name)}</option>`).join('');
+  if(type==='apptEntry'){title.textContent='Appointment';body.innerHTML=`<div class="row"><div class="field"><label>Patient name</label><input id="apPat"></div><div class="field"><label>Clinician</label><select id="apClin"><option value="">—</option>${staffOpts}</select></div></div><div class="row"><div class="field"><label>Type</label><select id="apType"><option value="nhs-standard">NHS standard</option><option value="nhs-enhanced">NHS enhanced</option><option value="private-consult">private consultation</option><option value="private-followup">private follow-up</option><option value="telephone">telephone</option><option value="home-visit">home visit</option></select></div><div class="field"><label>Status</label><select id="apStatus"><option value="attended">attended</option><option value="dna">DNA</option><option value="cancelled">cancelled</option></select></div></div><div class="field"><label>Fee</label><input type="number" id="apFee" step="0.01" value="${RULES.nhsStdApptValue}"></div><div class="actions"><button class="btn brass" onclick="saveAppt()">Save</button><button class="btn ghost" onclick="closeModal()">Cancel</button></div>`}
+  else if(type==='revenueEntry'){title.textContent='Revenue Entry';body.innerHTML=`<div class="row"><div class="field"><label>Type</label><select id="rvType"><option value="nhs">NHS</option><option value="private">private</option></select></div><div class="field"><label>Amount</label><input type="number" id="rvAmt" step="0.01"></div></div><div class="field"><label>Description</label><input id="rvDesc"></div><div class="actions"><button class="btn brass" onclick="saveRevenue()">Save</button><button class="btn ghost" onclick="closeModal()">Cancel</button></div>`}
+  else if(type==='rxEntry'){title.textContent='Prescribing Item';body.innerHTML=`<div class="row"><div class="field"><label>Drug name</label><input id="rxDrug"></div><div class="field"><label>Patient</label><input id="rxPat"></div></div><div class="row"><div class="field"><label>Prescriber</label><select id="rxPresc"><option value="">—</option>${staffOpts}</select></div><div class="field"><label>Cost</label><input type="number" id="rxCost" step="0.01"></div></div><div class="actions"><button class="btn brass" onclick="saveRx()">Save</button><button class="btn ghost" onclick="closeModal()">Cancel</button></div>`}
+  else if(type==='staffEntry'){title.textContent='Add Staff';body.innerHTML=`<div class="row"><div class="field"><label>Name</label><input id="stName"></div><div class="field"><label>Role</label><select id="stRole"><option>GP Partner</option><option>Salaried GP</option><option>Locum GP</option><option>Practice Nurse</option><option>HCA</option><option>ANP</option><option>Pharmacist</option><option>Physio</option><option>Practice Manager</option><option>Receptionist</option></select></div></div><div class="row"><div class="field"><label>Registration (GMC/NMC/HCPC)</label><input id="stReg"></div><div class="field"><label>CPD hours this year</label><input type="number" id="stCpd" value="0"></div></div><div class="row"><div class="field"><label>Appraisal due</label><input type="date" id="stAppr"></div><div class="field"><label style="font-size:12px;margin-top:14px"><input type="checkbox" id="stDbs"> DBS checked</label></div></div><div class="actions"><button class="btn brass" onclick="saveStaff()">Save</button><button class="btn ghost" onclick="closeModal()">Cancel</button></div>`}
+  else if(type==='expenseEntry'){title.textContent='Expense';body.innerHTML=`<div class="row"><div class="field"><label>Category</label><select id="exCat"><option value="premises">premises</option><option value="utilities">utilities</option><option value="staff">staff costs</option><option value="equipment">equipment</option><option value="it">IT / software</option><option value="insurance">insurance</option><option value="training">training</option><option value="clinical-waste">clinical waste</option><option value="consumables">consumables</option><option value="other">other</option></select></div><div class="field"><label>Amount</label><input type="number" id="exAmt" step="0.01"></div></div><div class="field"><label>Description</label><input id="exDesc"></div><div class="actions"><button class="btn brass" onclick="saveExpense()">Save</button><button class="btn ghost" onclick="closeModal()">Cancel</button></div>`}
+  else if(type==='settings'){title.textContent='Settings';body.innerHTML=`<div class="field"><label>Anthropic key (T3)</label><input type="password" id="sKey" value="${esc(state.settings.anthropicKey||'')}"></div><div class="row"><div class="field"><label>CQC annual fee</label><input type="number" id="sCqc" value="${state.settings.cqcFee||0}"></div><div class="field"><label>Indemnity annual</label><input type="number" id="sInd" value="${state.settings.indemnityPremium||0}"></div></div><div class="field"><label>PI annual</label><input type="number" id="sPi" value="${state.settings.piAnnualPremium||0}"></div><div class="actions"><button class="btn ghost" onclick="exportAll()">Export</button><button class="btn ghost" onclick="importAll()">Import</button><button class="btn danger" onclick="wipeAll()">Wipe</button><button class="btn brass" onclick="saveSettings()">Save</button><button class="btn ghost" onclick="closeModal()">Cancel</button></div>`}
+}
+function closeModal(){$('#modal').classList.remove('open')}
+
+async function saveAppt(){const e={id:uid('ap'),date:now(),patientName:$('#apPat').value.trim(),clinicianId:$('#apClin').value,type:$('#apType').value,status:$('#apStatus').value,fee:+$('#apFee').value||0};state.appointments.push(e);await idbPut('appointments',e);if(e.status==='attended'&&e.fee>0){const r={id:uid('rv'),date:now(),type:e.type.startsWith('nhs')?'nhs':'private',amount:e.fee,description:e.type+' · '+e.patientName};state.revenue.push(r);await idbPut('revenue',r)}await auditLog('appointment.added');closeModal();toast('Saved');render()}
+async function saveRevenue(){const e={id:uid('rv'),date:now(),type:$('#rvType').value,amount:+$('#rvAmt').value||0,description:$('#rvDesc').value.trim()};state.revenue.push(e);await idbPut('revenue',e);await auditLog('revenue.added');closeModal();toast('Saved');render()}
+async function saveRx(){const e={id:uid('rx'),date:now(),drug:$('#rxDrug').value.trim(),patientName:$('#rxPat').value.trim(),prescriberId:$('#rxPresc').value,cost:+$('#rxCost').value||0};state.prescribing.push(e);await idbPut('prescribing',e);await auditLog('rx.added');closeModal();toast('Saved');render()}
+async function saveStaff(){const e={id:uid('st'),name:$('#stName').value.trim(),role:$('#stRole').value,regNumber:$('#stReg').value.trim(),cpdHours:+$('#stCpd').value||0,appraisalDue:$('#stAppr').value?new Date($('#stAppr').value).getTime():null,dbsChecked:$('#stDbs').checked};state.staff.push(e);await idbPut('staff',e);await auditLog('staff.added');closeModal();toast('Saved');render()}
+async function saveExpense(){const e={id:uid('ex'),date:now(),category:$('#exCat').value,amount:+$('#exAmt').value||0,description:$('#exDesc').value.trim()};state.expenses.push(e);await idbPut('expenses',e);await auditLog('expense.added');closeModal();toast('Saved');render()}
+function saveSettings(){state.settings.anthropicKey=$('#sKey').value.trim();state.settings.cqcFee=+$('#sCqc').value||0;state.settings.indemnityPremium=+$('#sInd').value||0;state.settings.piAnnualPremium=+$('#sPi').value||0;$('#tierBadge').textContent=state.settings.anthropicKey?'T3':'T0';saveState();closeModal();toast('Saved');render()}
+function exportAll(){const d={tool:TOOLNAME,v:VERSION,ts:now(),firm:state.firm,staff:state.staff,appointments:state.appointments,revenue:state.revenue,prescribing:state.prescribing,expenses:state.expenses};const b=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='fallclinicpractice-export.json';a.click();URL.revokeObjectURL(u);toast('Exported')}
+function importAll(){const inp=document.createElement('input');inp.type='file';inp.accept='.json';inp.onchange=async()=>{const f=inp.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(d.firm){state.firm=d.firm;await idbPut('firms',d.firm)}for(const k of['staff','appointments','revenue','prescribing','expenses']){if(Array.isArray(d[k]))for(const r of d[k]){state[k].push(r);await idbPut(k,r)}}toast('Imported');render()}catch(e){toast('Failed')}};inp.click()}
+async function wipeAll(){if(!confirm('Wipe ALL data?'))return;for(const s of STORES){try{const tx=db.transaction(s,'readwrite');tx.objectStore(s).clear();await new Promise(r=>{tx.oncomplete=r})}catch(e){}}location.reload()}
+
+async function seedDemo(){if(state.settings.demoLoaded)return;
+  const firm={id:uid('fi'),name:'Demo Medical Centre',address:'1 Harley Street, London W1G 9QD',email:'reception@democlinic.nhs.uk',phone:'020 7123 4567',cqcRegistration:'CQC-1-234567890',updatedAt:now(),isDemo:true};
+  state.firm=firm;await idbPut('firms',firm);
+  const s1={id:uid('st'),name:'Dr Sarah Williams',role:'GP Partner',regNumber:'GMC 7654321',cpdHours:35,appraisalDue:now()+180*dayMs,dbsChecked:true};
+  const s2={id:uid('st'),name:'Dr Raj Patel',role:'Salaried GP',regNumber:'GMC 7654322',cpdHours:18,appraisalDue:now()+90*dayMs,dbsChecked:true};
+  const s3={id:uid('st'),name:'Nurse Helen Brooks',role:'Practice Nurse',regNumber:'NMC 12A3456B',cpdHours:22,appraisalDue:now()+60*dayMs,dbsChecked:true};
+  state.staff.push(s1,s2,s3);for(const s of[s1,s2,s3])await idbPut('staff',s);
+  const mk=monthKey();
+  const appts=[
+    {id:uid('ap'),date:now()-2*dayMs,patientName:'Margaret Thompson',clinicianId:s1.id,type:'nhs-standard',status:'attended',fee:RULES.nhsStdApptValue},
+    {id:uid('ap'),date:now()-1*dayMs,patientName:'Amir Hassan',clinicianId:s2.id,type:'private-consult',status:'attended',fee:RULES.privateConsultFee},
+    {id:uid('ap'),date:now()-1*dayMs,patientName:'James Cooper',clinicianId:s1.id,type:'nhs-standard',status:'dna',fee:0},
+    {id:uid('ap'),date:now(),patientName:'Lisa Chen',clinicianId:s3.id,type:'nhs-enhanced',status:'attended',fee:RULES.nhsEnhancedValue},
+  ];
+  state.appointments.push(...appts);for(const a of appts)await idbPut('appointments',a);
+  const revs=[
+    {id:uid('rv'),date:now()-2*dayMs,type:'nhs',amount:RULES.nhsStdApptValue,description:'NHS std · Margaret Thompson'},
+    {id:uid('rv'),date:now()-1*dayMs,type:'private',amount:RULES.privateConsultFee,description:'Private consult · Amir Hassan'},
+    {id:uid('rv'),date:now(),type:'nhs',amount:RULES.nhsEnhancedValue,description:'NHS enhanced · Lisa Chen'},
+    {id:uid('rv'),date:now()-5*dayMs,type:'nhs',amount:2800,description:'QOF quarterly payment'},
+  ];
+  state.revenue.push(...revs);for(const r of revs)await idbPut('revenue',r);
+  const rxs=[
+    {id:uid('rx'),date:now()-2*dayMs,drug:'Metformin 500mg',patientName:'Margaret Thompson',prescriberId:s1.id,cost:1.23},
+    {id:uid('rx'),date:now()-1*dayMs,drug:'Amoxicillin 500mg',patientName:'James Cooper',prescriberId:s2.id,cost:0.89},
+    {id:uid('rx'),date:now(),drug:'Omeprazole 20mg',patientName:'Lisa Chen',prescriberId:s1.id,cost:0.45},
+  ];
+  state.prescribing.push(...rxs);for(const rx of rxs)await idbPut('prescribing',rx);
+  const exps=[
+    {id:uid('ex'),date:now()-10*dayMs,category:'premises',amount:3500,description:'Monthly rent'},
+    {id:uid('ex'),date:now()-5*dayMs,category:'it',amount:450,description:'EMIS license'},
+    {id:uid('ex'),date:now()-3*dayMs,category:'clinical-waste',amount:180,description:'Clinical waste collection'},
+  ];
+  state.expenses.push(...exps);for(const ex of exps)await idbPut('expenses',ex);
+  state.settings.demoLoaded=true;state.settings.indemnityPremium=8500;state.settings.piAnnualPremium=1200;
+  await saveState();await auditLog('demo.seeded');
+}
+
+(async function boot(){try{await loadAll();await seedDemo();initMesh();$('#tierBadge').textContent=state.settings.anthropicKey?'T3':'T0';render()}catch(e){console.error('[fallclinicpractice] boot error:',e);document.getElementById('view').innerHTML='<div class="empty">Boot error: '+esc(e.message)+'</div>'}})();
+</script>
+</body>
+</html>
