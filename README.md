@@ -26,7 +26,7 @@ Run your clinic's finances and compliance from one HTML file. 9 tabs cover appoi
 
 ### Key rules
 
-- **CQC**: Safe, Effective, Caring, Responsive, Well-led (annual fee ~TBA)
+- **CQC**: Safe, Effective, Caring, Responsive, Well-led (annual fee ~£4,428)
 - **GMC revalidation**: 5-year cycle, annual appraisals
 - **Medical indemnity**: mandatory for all clinical staff
 - **Prescribing**: local formulary, NICE TAs mandatory
